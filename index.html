@@ -3,90 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>プライバシーポリシー | 過去問ジム</title>
+<title>過去問ジム | 衛生管理者試験の過去問トレーニングアプリ</title>
+<meta name="description" content="第一種・第二種衛生管理者免許試験の合格を目指す方のための過去問トレーニングアプリ「過去問ジム」。過去問1,000問以上を収録。">
 <style>
+  * { box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
       "Hiragino Sans", Meiryo, sans-serif;
     background: #0F1C2D;
     color: #E8EEF5;
-    line-height: 1.9;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
   }
   .container {
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 40px 20px 80px;
+    padding: 56px 20px 80px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba(211, 171, 110, 0.5);
+    background: rgba(211, 171, 110, 0.12);
+    color: #D3AB6E;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
   }
   h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #FFFFFF;
+    letter-spacing: 0.01em;
+  }
+  .lead {
+    font-size: 16px;
+    color: #CDD6E0;
+    margin-bottom: 36px;
+  }
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .cta {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14.5px;
+    text-decoration: none;
+  }
+  .cta.primary {
+    background: #D3AB6E;
+    color: #0F1C2D;
+  }
+  .cta.secondary {
+    background: transparent;
+    border: 1px solid #3A4A5E;
+    color: #E9E9EF;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #D3AB6E;
+    margin: 48px 0 18px;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .feature-card {
+    background: #202D3D;
+    border: 1px solid #3A4A5E;
+    border-radius: 14px;
+    padding: 18px;
+  }
+  .feature-card .icon {
     font-size: 22px;
     margin-bottom: 8px;
+  }
+  .feature-card h3 {
+    font-size: 15px;
+    margin: 0 0 6px;
     color: #FFFFFF;
   }
-  .updated {
-    font-size: 13px;
-    color: #9AA7B5;
-    margin-bottom: 32px;
+  .feature-card p {
+    font-size: 13.5px;
+    color: #B9BCC4;
+    margin: 0;
   }
-  h2 {
-    font-size: 16px;
-    margin-top: 32px;
-    margin-bottom: 10px;
-    color: #FFC94D;
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
   }
-  p {
+  .plan-card {
+    background: #202D3D;
+    border: 1px solid #3A4A5E;
+    border-radius: 14px;
+    padding: 20px 16px;
+    text-align: center;
+    position: relative;
+  }
+  .plan-card.popular {
+    border-color: #D3AB6E;
+  }
+  .plan-card .ribbon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #D3AB6E;
+    color: #0F1C2D;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .plan-card .name {
     font-size: 14px;
     color: #CDD6E0;
-    white-space: pre-line;
+    margin-bottom: 6px;
   }
-  a {
-    color: #FFC94D;
+  .plan-card .price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FFFFFF;
   }
-  .footer {
-    margin-top: 48px;
+  .plan-card .period {
     font-size: 12px;
+    color: #9AA7B5;
+  }
+  .subjects {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .subject-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #202D3D;
+    border: 1px solid #3A4A5E;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 13px;
+    color: #E8EEF5;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .dot.amber { background: #D3AB6E; border-radius: 2px; }
+  .dot.sub { background: #ABA9C8; border-radius: 50%; }
+  .dot.mint { background: #7CC79E; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+  .footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid #3A4A5E;
+    font-size: 12.5px;
     color: #6E7A88;
-    text-align: center;
+  }
+  .footer a {
+    color: #9AA7B5;
+  }
+  .footer-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .source-note {
+    font-size: 11.5px;
+    color: #6E7A88;
+    margin-top: 10px;
   }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>プライバシーポリシー</h1>
-  <div class="updated">最終更新日: 2025年10月24日</div>
+  <div class="badge">過去問1,000問以上を収録</div>
+  <h1>過去問ジム</h1>
+  <p class="lead">
+    第一種・第二種衛生管理者免許試験の合格を目指す方のための、過去問トレーニング特化アプリ。<br>
+    すきま時間に、問題演習と暗記カードでコツコツ積み上げる。
+  </p>
 
-  <p>運営者は、本アプリ「過去問ジム」における利用者の個人情報を含む情報の取り扱いについて、以下のとおりプライバシーポリシー(以下「本ポリシー」)を定めます。</p>
+  <div class="cta-row">
+    <a class="cta primary" href="https://apps.apple.com/app/id6824213773" target="_blank" rel="noopener">App Storeで見る</a>
+    <a class="cta secondary" href="privacy.html">プライバシーポリシー</a>
+  </div>
 
-  <h2>第1条(取得する情報)</h2>
-  <p>本アプリは、サービス向上のため、以下の情報を取得する場合があります。
-・端末識別子、OSバージョン等の端末情報
-・アプリの利用状況(学習履歴、正答数等。端末内に保存され、運営者のサーバーには送信されません)
-・誤り報告機能をご利用の場合、報告内容および端末情報の一部</p>
+  <div class="section-title">主な機能</div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="icon">📝</div>
+      <h3>過去問演習</h3>
+      <p>衛生管理者免許試験 公表試験問題をベースに、関係法令・労働衛生・労働生理を網羅。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🗂️</div>
+      <h3>暗記カード</h3>
+      <p>要点をまとめたカードで、すきま時間にサクサク知識をインプット。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⭐</div>
+      <h3>頻出37問</h3>
+      <p>過去14回分のうち2回以上出題された「本当に出る問題」を優先的に演習。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🎯</div>
+      <h3>模擬試験</h3>
+      <p>本番と同じ形式・時間配分で実力チェック。毎回ランダム出題。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔁</div>
+      <h3>間隔反復</h3>
+      <p>忘れかけた頃に復習が来る仕組みで、効率よく記憶に定着させる。</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔖</div>
+      <h3>ブックマーク・メモ</h3>
+      <p>苦手な問題をマークして、自分だけの復習リストを作成。</p>
+    </div>
+  </div>
 
-  <h2>第2条(広告配信について)</h2>
-  <p>本アプリは、無料プランにおいて第三者配信の広告サービス(Google AdMob等)を利用しています。広告配信事業者は、利用者の興味に応じた広告を表示するために、Cookie等の識別子を使用して情報を収集することがあります。詳細は各広告配信事業者のプライバシーポリシーをご確認ください。</p>
+  <div class="section-title">科目別の学習状況が一目でわかる</div>
+  <div class="subjects">
+    <span class="subject-chip"><span class="dot amber"></span>関係法令</span>
+    <span class="subject-chip"><span class="dot sub"></span>労働衛生</span>
+    <span class="subject-chip"><span class="dot mint"></span>労働生理</span>
+  </div>
 
-  <h2>第3条(情報の利用目的)</h2>
-  <p>取得した情報は、以下の目的で利用します。
-・本アプリの機能提供・維持・改善のため
-・利用者からのお問い合わせ・不具合報告への対応のため
-・広告の配信のため</p>
+  <div class="section-title">料金プラン</div>
+  <div class="plans">
+    <div class="plan-card">
+      <div class="name">プレミアムプラン</div>
+      <div class="price">¥920</div>
+      <div class="period">/月</div>
+    </div>
+    <div class="plan-card popular">
+      <div class="ribbon">一番人気</div>
+      <div class="name">直前対策パック</div>
+      <div class="price">¥2,400</div>
+      <div class="period">/3か月</div>
+    </div>
+    <div class="plan-card">
+      <div class="name">じっくり対策パック</div>
+      <div class="price">¥3,800</div>
+      <div class="period">/6か月</div>
+    </div>
+  </div>
+  <p class="source-note">無料プランでも問題演習1日30問・暗記カード1日20枚までご利用いただけます。Premiumプランは7日間無料トライアルつき。価格は税込表示です。</p>
 
-  <h2>第4条(第三者提供)</h2>
-  <p>運営者は、法令に基づく場合を除き、あらかじめ利用者の同意を得ることなく第三者に個人情報を提供することはありません。</p>
-
-  <h2>第5条(情報の管理)</h2>
-  <p>運営者は、取得した情報を適切に管理し、漏えい・滅失・毀損の防止に努めます。学習履歴等のデータは、原則として利用者の端末内に保存されます。</p>
-
-  <h2>第6条(プライバシーポリシーの変更)</h2>
-  <p>本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、利用者に通知することなく変更することができるものとします。重要な変更がある場合は、本ページまたはアプリ内でお知らせします。</p>
-
-  <h2>第7条(お問い合わせ)</h2>
-  <p>本ポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。
-Eメール: animaltraining.arai@gmail.com</p>
-
-  <div class="footer">過去問ジム運営者</div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="mailto:animaltraining.arai@gmail.com">お問い合わせ</a>
+    </div>
+    <div>出典: 衛生管理者免許試験 公表試験問題(令和以降・再出題・改題を含む)</div>
+    <div style="margin-top:6px;">&copy; 2025 過去問ジム運営者</div>
+  </div>
 </div>
 </body>
 </html>
